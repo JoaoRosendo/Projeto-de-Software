@@ -6,14 +6,18 @@ using namespace std;
 
 int keyInventory = 0;
 
-
 int nearDragon(char Map[10][11], int PosX, int PosY)
 {
-    if      (Map[PosY+1][PosX] == 'D') return 1;
-    else if (Map[PosY-1][PosX] == 'D') return 1;
-    else if (Map[PosY][PosX+1] == 'D') return 1;
-    else if (Map[PosY][PosX-1] == 'D') return 1;
-    else return 0;
+    if (Map[PosY + 1][PosX] == 'D')
+        return 1;
+    else if (Map[PosY - 1][PosX] == 'D')
+        return 1;
+    else if (Map[PosY][PosX + 1] == 'D')
+        return 1;
+    else if (Map[PosY][PosX - 1] == 'D')
+        return 1;
+    else
+        return 0;
 }
 
 void keyGenerator(char Map[10][11])
@@ -65,13 +69,10 @@ int nextMove(char Map[10][11], int *currentX, int *currentY, int nextX, int next
         }
     }
     return 0;
-
 }
 
 int moveHero(char KeyPress, char Map[10][11], int *PosX, int *PosY)
 {
-
-    int nextX, nextY;
 
     switch (KeyPress)
     {
@@ -115,11 +116,11 @@ int printMap(char Map[10][11])
         for (int x = 0; x < 10; x++)
         {
 
-            std::cout << Map[i][x];
-            std::cout << " ";
+            cout << Map[i][x];
+            cout << " ";
         }
 
-        std::cout << "\n";
+        cout << "\n";
     }
 
     return 0;
@@ -139,9 +140,10 @@ int gameOver(char Map[10][11], int PosX, int PosY)
         return 1;
     }
 
-    else return 0;
-
+    else
+        return 0;
 }
+
 int main()
 {
     srand(time(NULL));
@@ -174,7 +176,6 @@ int main()
         cout << "\n";
         moveHero(KeyPress, Map, &PosX, &PosY);
         printMap(Map);
-        printf("%d %d", PosX, PosY);
     }
     return 0;
 }
