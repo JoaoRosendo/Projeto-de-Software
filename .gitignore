@@ -30,3 +30,7 @@
 *.exe
 *.out
 *.app
+.idea/modules.xml
+.idea/Projeto-de-Software.iml
+.idea/vcs.xml
+.vscode/settings.json
